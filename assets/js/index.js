@@ -42,8 +42,6 @@ $(function () {
       // 高さに応じて、クラスを付与する
       if (scroll > fadeinHeight - windowHeight + 100) {
         $(this).addClass('scrollin');
-      } else {
-        $(this).removeClass('scrollin');
       }
     });
   });
