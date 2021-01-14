@@ -12,7 +12,7 @@ $(function () {
       return;
     });
   }
-  toggleAnimation('#lineBanner', 1500);
+  toggleAnimation('u-side-icon', 1500);
   toggleAnimation('.h-container', 300);
   toggleAnimation('.p-end-icon__scroll', 2500);
 
