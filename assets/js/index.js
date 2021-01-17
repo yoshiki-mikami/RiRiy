@@ -1,10 +1,19 @@
-$(function () {
+$(function() {
+
+  // メインビジュアルのスライダーアニメーション
+  $('.slider').slick({
+    fade: true,
+    speed: 5000,
+    autoplay: true,
+    lazyLoad: 'progressive',
+    infinite: true
+  });
 
   // 特定位置に来た時に、ヘッダーが出入りする
-  const toggleAnimation = (toggle, point) => {
+  function toggleAnimation(toggle, point_01, point_02) {
     $(toggle).hide();
     $(window).scroll(function () {
-      if ($(this).scrollTop() > point) {
+      if ($(this).scrollTop() > $(point_01).offset().top && $(this).scrollTop() < $(point_02).offset().top) {
         $(toggle).fadeIn(300);
       } else {
         $(toggle).fadeOut(300);
@@ -12,9 +21,9 @@ $(function () {
       return;
     });
   }
-  toggleAnimation('u-side-icon', 1500);
-  toggleAnimation('.h-container', 300);
-  toggleAnimation('.p-end-icon__scroll', 2500);
+
+  toggleAnimation('.u-side-icon', '#toggleAnimationSection', 'footer');
+  toggleAnimation('.h-container', '#toggleAnimationSection', '.f-end');
 
   // メインビジュアルのフェードイン
   $('.m-mainvisual').fadeIn(1500);
@@ -40,7 +49,7 @@ $(function () {
       let windowHeight = $(window).height();
 
       // 高さに応じて、クラスを付与する
-      if (scroll > fadeinHeight - windowHeight + 100) {
+      if (scroll > fadeinHeight - windowHeight) {
         $(this).addClass('scrollin');
       }
     });
@@ -72,4 +81,6 @@ $(function () {
   scrollFunc('.staffScroll', '#staffSection', 50);
   // 料金体系へスクロールする処理
   scrollFunc('.messageScroll', '#messageSection', 50);
+
+
 });
