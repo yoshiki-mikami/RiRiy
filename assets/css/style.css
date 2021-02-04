@@ -135,9 +135,11 @@ img {
           box-shadow: 0 0 5px #323232;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 992px) {
   .h-container {
-    height: 60px;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
 }
 
@@ -707,13 +709,6 @@ img {
   z-index: 10;
 }
 
-@media screen and (max-width: 425px) {
-  .c-modal__btn {
-    top: 10px;
-    right: 15px;
-  }
-}
-
 .c-modal__list {
   display: none;
   cursor: pointer;
@@ -835,12 +830,6 @@ img {
   width: auto;
   height: 90px;
   margin-right: 5em;
-}
-
-@media screen and (max-width: 425px) {
-  .p-header-image {
-    height: 60px;
-  }
 }
 
 .p-header-image__logo {
