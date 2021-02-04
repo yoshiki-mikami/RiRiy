@@ -9,20 +9,22 @@ $(function() {
     infinite: true
   });
 
-  // 特定位置に来た時に、ヘッダーが出入りする
-  function toggleAnimation(toggle, point_01, point_02) {
-    $(toggle).hide();
+  // 特定位置２つの間に来たときに要素が出入りする
+  const toggleAnimation = (elem, point_01, point_02) => {
+    $(elem).hide();
     $(window).scroll(function () {
-      if ($(this).scrollTop() > $(point_01).offset().top && $(this).scrollTop() < $(point_02).offset().top) {
-        $(toggle).fadeIn(300);
+      const scroll = $(this).scrollTop();
+      const height_01 = $(point_01).offset().top;
+      const height_02 = $(point_02).offset().top;
+      if (scroll > height_01 && scroll < height_02 - $(window).height()) {
+        $(elem).fadeIn(300);
       } else {
-        $(toggle).fadeOut(300);
+        $(elem).fadeOut(300);
       }
-      return;
     });
   }
 
-  toggleAnimation('.u-side-icon', '#toggleAnimationSection', 'footer');
+  toggleAnimation('.u-side-icon', '#toggleAnimationSection', '.f-end');
   toggleAnimation('.h-container', '#toggleAnimationSection', '.f-end');
 
   // メインビジュアルのフェードイン
