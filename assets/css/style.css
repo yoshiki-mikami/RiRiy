@@ -1,39 +1,5 @@
 @charset "UTF-8";
 /*関数・Mixin*/
-@-webkit-keyframes arrowAnimation {
-  0% {
-    opacity: 1;
-    -webkit-transform: translate(0);
-            transform: translate(0);
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: translate(1em, 0);
-            transform: translate(1em, 0);
-  }
-}
-@keyframes arrowAnimation {
-  0% {
-    opacity: 1;
-    -webkit-transform: translate(0);
-            transform: translate(0);
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: translate(1em, 0);
-            transform: translate(1em, 0);
-  }
-}
-
-.c-arrow-right::after {
-  display: inline-block;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f105";
-  padding-left: .5em;
-  font-size: 1.6rem;
-}
-
 /*リセット*/
 /*スタイルの下地*/
 * {
@@ -92,8 +58,70 @@ img {
           transform: translate(0, 0);
 }
 
+@-webkit-keyframes arrowAnimation {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(1em, 0);
+            transform: translate(1em, 0);
+  }
+}
+
+@keyframes arrowAnimation {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(1em, 0);
+            transform: translate(1em, 0);
+  }
+}
+
+.c-arrow-right::after {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f105";
+  padding-left: .5em;
+  font-size: 1.6rem;
+}
+
 .slick-slide {
   outline: none;
+}
+
+.quaver {
+  display: inline-block;
+  margin: 0 .5rem;
+  background: url("../images/quaver_icon.svg") center/cover no-repeat;
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+}
+
+.smile {
+  display: inline-block;
+  margin: 0 .5rem;
+  background: url("../images/smile_icon.svg") center/cover no-repeat;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+}
+
+.star {
+  display: inline-block;
+  margin: 0 .5rem;
+  background: url("../images/star_icon.svg") center/cover no-repeat;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
 }
 
 /*ヘッダー*/
@@ -453,7 +481,7 @@ img {
 }
 
 .c-section {
-  width: 500px;
+  width: 600px;
   margin: 0 auto;
 }
 
@@ -498,7 +526,7 @@ img {
 }
 
 .c-info__text {
-  font-size: 2rem;
+  font-size: 1.8rem;
   letter-spacing: 3px;
   line-height: 2;
 }
@@ -992,9 +1020,15 @@ img {
   font-size: 1.8rem;
   border-left: 2px solid #eba7bc;
   margin-bottom: 1.5em;
-  width: 40%;
+  width: 50%;
   padding-left: 1em;
   line-height: initial;
+}
+
+@media screen and (max-width: 767px) {
+  .p-shop-info__menu {
+    font-size: 1.4rem;
+  }
 }
 
 .p-service-image {
@@ -1148,10 +1182,12 @@ img {
 .p-message-info__pickup {
   color: #323232;
   margin: 2em 0;
-  font-size: 2.4rem;
+  font-size: 2.8rem;
   text-align: center;
-  -webkit-transform: translate(0, 50px);
-          transform: translate(0, 50px);
+  -webkit-transform: translate(-400px, 0);
+          transform: translate(-400px, 0);
+  -webkit-transition: all 1.5s ease-out;
+  transition: all 1.5s ease-out;
 }
 
 .p-message-info__pickup p {
@@ -1806,8 +1842,6 @@ img {
 .p-menu-heading__title {
   font-weight: 400;
   font-size: 3.2rem;
-  color: #323232;
-  border-color: #eba7bc;
 }
 
 @media screen and (max-width: 425px) {
