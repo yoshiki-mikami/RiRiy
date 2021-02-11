@@ -176,6 +176,7 @@ img {
 .m-mainvisual {
   position: relative;
   display: none;
+  height: 100vh;
 }
 
 .m-shop {
@@ -193,6 +194,10 @@ img {
   }
 }
 
+.m-service {
+  background: #fafafa;
+}
+
 .m-service__menu {
   display: -webkit-box;
   display: -webkit-flex;
@@ -208,7 +213,16 @@ img {
 
 .m-service__menu-list {
   width: 40%;
-  padding-bottom: 6em;
+  margin-bottom: 10em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .m-service__menu-list:nth-of-type(2n) {
@@ -219,7 +233,7 @@ img {
 @media screen and (max-width: 767px) {
   .m-service__menu-list {
     width: 100%;
-    padding-bottom: 4em;
+    margin-bottom: 7em;
   }
 }
 
@@ -260,9 +274,10 @@ img {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: space-around;
-      -ms-flex-pack: distribute;
-          justify-content: space-around;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
@@ -273,17 +288,17 @@ img {
 }
 
 .m-staff__member-list {
-  width: 30%;
+  width: 35%;
   margin: 0 auto;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 767px) {
   .m-staff__member-list {
-    width: 80%;
-    padding-bottom: 2rem;
+    width: 70%;
+    padding-bottom: 5em;
   }
   .m-staff__member-list:last-child {
-    padding-bottom: initial;
+    padding-bottom: 2em;
   }
 }
 
@@ -309,6 +324,10 @@ img {
     -webkit-transition-delay: 0s;
             transition-delay: 0s;
   }
+}
+
+.m-message {
+  background: #fafafa;
 }
 
 .m-shav__warning {
@@ -473,7 +492,7 @@ img {
 }
 
 .c-block {
-  padding: 5rem 0;
+  padding: 10em 0;
 }
 
 @media screen and (max-width: 767px) {
@@ -896,7 +915,7 @@ img {
 
 .p-mainvisual-slide__image {
   width: 100%;
-  height: 50vh;
+  height: 60vh;
 }
 
 .p-mainvisual-slide__image:nth-of-type(1) {
@@ -968,7 +987,7 @@ img {
 .p-mainvisual-heading__text {
   text-align: center;
   line-height: 2;
-  font-size: 2rem;
+  font-size: 3rem;
   letter-spacing: 5px;
   margin-bottom: 1em;
 }
@@ -978,6 +997,24 @@ img {
     text-align: center;
     font-size: 1.6rem;
   }
+}
+
+.p-mainvisual-shaving-note__image {
+  opacity: .5;
+  background: url("../images/shaving_01.jpg") center/cover no-repeat;
+  height: 30vh;
+}
+
+.p-mainvisual-menu__image {
+  opacity: .5;
+  background: url("../images/wedding_table.jpg") center/cover no-repeat;
+  height: 30vh;
+}
+
+.p-mainvisual-contact__image {
+  opacity: .5;
+  background: url("../images/tools_01.jpg") center/cover no-repeat;
+  height: 30vh;
 }
 
 .p-shop-info {
@@ -1033,7 +1070,11 @@ img {
 }
 
 .p-service-info {
-  margin: 0 auto;
+  padding-bottom: 5em;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 @media screen and (max-width: 425px) {
@@ -1058,6 +1099,39 @@ img {
   margin: 0 auto;
 }
 
+.p-service-more {
+  text-align: right;
+  font-size: 1.4rem;
+}
+
+.p-service-more__btn {
+  padding: 1em;
+  position: relative;
+}
+
+.p-service-more__btn::before {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: rgba(235, 167, 188, 0.5);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+}
+
+.p-service-more__btn:hover::before {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
 .p-staff-member {
   position: relative;
   overflow: hidden;
@@ -1065,17 +1139,11 @@ img {
 }
 
 .p-staff-member__image {
-  width: 80%;
+  width: 70%;
   height: auto;
   margin: 0 auto;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-}
-
-@media screen and (max-width: 767px) {
-  .p-staff-member__image {
-    width: 100%;
-  }
 }
 
 .p-staff-member::before, .p-staff-member::after {
@@ -1122,7 +1190,7 @@ img {
   transition: 0.5s;
 }
 
-.p-staff-member:hover .p-staff-info {
+.p-staff-member:hover .p-staff-name {
   -webkit-transform: translate(-50%, 0px);
           transform: translate(-50%, 0px);
   opacity: 1;
@@ -1135,7 +1203,7 @@ img {
           transform: scale(1, 1);
 }
 
-.p-staff-info {
+.p-staff-name {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1150,18 +1218,27 @@ img {
 }
 
 @media screen and (max-width: 767px) {
-  .p-staff-info {
+  .p-staff-name {
     -webkit-transform: translate(-50%, 0);
             transform: translate(-50%, 0);
     opacity: 1;
   }
 }
 
-.p-staff-info__text {
+.p-staff-name__text {
   text-align: center;
   color: #646464;
   font-size: 1.4rem;
   letter-spacing: 3px;
+}
+
+.p-staff-info {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.p-staff-info__text--head {
+  font-weight: 900;
 }
 
 .p-message-info__text {
