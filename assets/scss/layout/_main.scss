@@ -1,0 +1,174 @@
+// main{
+
+// }
+.m-mainvisual {
+  position: relative;
+  display: none;
+  height: 100vh;
+  &__image {
+  }
+  &__heading{
+  }
+}
+
+.m-shop {
+  width: 60%;
+  margin: 0 auto;
+  // &__heading{
+
+  // }
+  // &__info{
+
+  // }
+  &__btn {
+    text-align: center;
+  }
+  @include break_tab {
+    width: 100%;
+  }
+}
+
+.m-service {
+  background: $white;
+  &__heading {
+    margin-bottom: 15em;
+  }
+  &__menu {
+    display: flex;
+    justify-content: space-around;
+    // align-items: center;
+    flex-wrap: wrap;
+  }
+  &__menu-list {
+    width: 35%;
+    margin-bottom: 15em;
+    display: flex;
+    flex-direction: column;
+    &:nth-of-type(2n) {
+      transition-delay: 0.2s;
+    }
+    @include break_tab {
+      width: 100%;
+      margin-bottom: 7em;
+    }
+  }
+  &__btn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    background-image: url("../images/tools_01.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: $grayOpacity;
+      position: absolute;
+      top: 0;
+    }
+  }
+}
+
+.m-staff {
+
+  &__heading {
+    margin-bottom: 10em;
+  }
+  &__member {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  &__member-list {
+    width: 50%;
+    margin: 0 auto;
+    @include break_tab {
+      width: 70%;
+      padding-bottom: 5em;
+      &:last-child {
+        padding-bottom: 2em;
+      }
+    }
+    &:nth-of-type(2) {
+      transition-delay: 0.2s;
+      @include break_sp {
+        transition-delay: 0s;
+      }
+    }
+    &:nth-of-type(3) {
+      transition-delay: 0.4s;
+      @include break_sp {
+        transition-delay: 0s;
+      }
+    }
+  }
+}
+
+.m-message {
+  background: $white;
+  &__heading {
+    margin-bottom: 10em;
+  }
+  &__info {
+  }
+}
+
+//
+
+// 下層ページ
+
+.m-subpage {
+  &__heading {
+    margin-bottom: 10em;
+  }
+}
+
+// シェービングページ
+.m-shav {
+    &__message {
+  }
+  &__warning {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+// 詳細メニューページ
+.m-salon-menu {
+  &__heading {
+    margin-bottom: 10em;
+  }
+  &__list {
+    // padding: 10rem 0;
+  }
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    flex-wrap: wrap;
+  }
+  &__minwrap {
+    display: flex;
+    justify-content: space-between;
+    // flex-wrap: wrap;
+    @include break_tab {
+      flex-wrap: wrap;
+    }
+  }
+}
+// お問い合わせページ
+.m-contact {
+  margin-bottom: 5em;
+  &__heading {
+    margin-bottom: 10em;
+  }
+  // &__form {
+  // }
+}
