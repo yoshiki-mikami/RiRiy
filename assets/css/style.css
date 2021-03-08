@@ -1275,7 +1275,8 @@ img {
 
 @media screen and (max-width: 767px) {
   .p-staff-info {
-    width: 80%;
+    width: 100%;
+    margin-left: 0%;
   }
 }
 
@@ -1285,6 +1286,12 @@ img {
 
 .p-staff-info__text--head {
   font-weight: 900;
+}
+
+@media screen and (max-width: 767px) {
+  .tab-parag {
+    display: block;
+  }
 }
 
 .p-message-info__text {
